@@ -11,7 +11,11 @@ public class PlayerMovNoGrav : MonoBehaviour
 
     Vector2 movement;
 
-    // Update is called once per frame
+    void Start()
+    {
+        rb.gravityScale = 0;
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

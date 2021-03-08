@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class PlayerMovWithGrav : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public float moveSpeed = 5f;
+
+    public float jumpForce = 5f;
+
+    public Rigidbody2D rb;
+
     void Start()
     {
-        
+        rb.gravityScale = 2;
+        rb.AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Jump();
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        transform.position += movement * Time.deltaTime * moveSpeed;
+    }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
+        {
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
     }
 }
