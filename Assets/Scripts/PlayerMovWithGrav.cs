@@ -19,6 +19,15 @@ public class PlayerMovWithGrav : MonoBehaviour
 
     void Update()
     {
+        //checking if gravity still works. If not, fix it.
+        if (rb.gravityScale == 2)
+        {
+            Debug.Log("Gravity On");
+        } else
+        {
+            rb.gravityScale = 2;
+        }
+
         Jump();
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;

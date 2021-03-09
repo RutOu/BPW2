@@ -24,7 +24,7 @@ public class collideWithSurface : MonoBehaviour
                     Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
                     //yield on a new YieldInstruction that waits for a certain amount of seconds.
-                    yield return new WaitForSeconds(0.25f);
+                    yield return new WaitForSeconds(0.15f);
                     //movement switch
                     player.GetComponent<PlayerMovWithGrav>().enabled = false;
                     player.GetComponent<PlayerMovNoGrav>().enabled = true;
@@ -44,9 +44,9 @@ public class collideWithSurface : MonoBehaviour
                     Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
                     //extra upward force
-                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 16f), ForceMode2D.Impulse);
+                    //player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 20f), ForceMode2D.Impulse);
                     //yield on a new YieldInstruction that waits for a certain amount of seconds.
-                    yield return new WaitForSeconds(0.25f);
+                    yield return new WaitForSeconds(1f);
                     //movement switch
                     player.GetComponent<PlayerMovNoGrav>().enabled = false;
                     player.GetComponent<PlayerMovWithGrav>().enabled = true;
