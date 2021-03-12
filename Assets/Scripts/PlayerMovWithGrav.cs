@@ -11,6 +11,10 @@ public class PlayerMovWithGrav : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public float ymovement;
+
+    public Animator LandAnimator;
+
     void Start()
     {
         rb.gravityScale = 2;
@@ -27,10 +31,16 @@ public class PlayerMovWithGrav : MonoBehaviour
         {
             rb.gravityScale = 2;
         }
-
+         
         Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * moveSpeed;
+        Vector3 xmovement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        transform.position += xmovement * Time.deltaTime * moveSpeed;
+
+        //setting up animation
+        LandAnimator.SetBool("Underwater", false);
+        LandAnimator.SetFloat("Horizontal", xmovement.x);
+        LandAnimator.SetFloat("Vertical", ymovement);
+        LandAnimator.SetFloat("Speed", xmovement.sqrMagnitude);
     }
 
     void Jump()
@@ -38,6 +48,10 @@ public class PlayerMovWithGrav : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            ymovement = 1f;
+        } else if (Mathf.Abs(rb.velocity.y) < 0.001f)
+        {
+            ymovement = 0f;
         }
     }
 }

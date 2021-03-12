@@ -46,7 +46,7 @@ public class collideWithSurface : MonoBehaviour
                     //extra upward force
                     //player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 20f), ForceMode2D.Impulse);
                     //yield on a new YieldInstruction that waits for a certain amount of seconds.
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(0.5f);
                     //movement switch
                     player.GetComponent<PlayerMovNoGrav>().enabled = false;
                     player.GetComponent<PlayerMovWithGrav>().enabled = true;

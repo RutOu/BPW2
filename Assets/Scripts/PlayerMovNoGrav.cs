@@ -11,6 +11,8 @@ public class PlayerMovNoGrav : MonoBehaviour
 
     Vector2 movement;
 
+    public Animator WaterAnimator;
+
     void Start()
     {
         rb.gravityScale = 0;
@@ -20,6 +22,12 @@ public class PlayerMovNoGrav : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        //setting up animation
+        WaterAnimator.SetBool("Underwater", true);
+        WaterAnimator.SetFloat("Horizontal", movement.x);
+        WaterAnimator.SetFloat("Vertical", movement.y);
+        WaterAnimator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     void FixedUpdate()
