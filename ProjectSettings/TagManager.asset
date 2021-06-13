@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackLit
+    uniqueID: 1372210519
+    locked: 0
+  - name: FrontLit
+    uniqueID: 722058509
+    locked: 0
+  - name: TopLit
+    uniqueID: 345756077
+    locked: 0
