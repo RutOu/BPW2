@@ -1985,8 +1985,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 345756077
-  m_SortingLayer: 3
+  m_SortingLayerID: 722058509
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f71540da8e220dc4ba8d2dbad0f2570c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5458,6 +5458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939962484}
   - component: {fileID: 1939962483}
+  - component: {fileID: 1939962485}
   m_Layer: 0
   m_Name: WaterlayerSprite
   m_TagString: Untagged
@@ -5484,7 +5485,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 08279533677d8ae4a8868b793f20aeac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5530,6 +5531,25 @@ Transform:
   m_Father: {fileID: 957522252}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1939962485
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939962482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9c6e77c92c6fac42871a0b0895ef267, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2027551941
 PrefabInstance:
   m_ObjectHideFlags: 0
